@@ -1,3 +1,5 @@
+use anyhow::Result;
+
 /// ログの出力制御
 pub async fn init_logger() -> Result<(), tracing::subscriber::SetGlobalDefaultError> {
   let subscriber = tracing_subscriber::fmt()
@@ -8,6 +10,6 @@ pub async fn init_logger() -> Result<(), tracing::subscriber::SetGlobalDefaultEr
 }
 
 #[tokio::main]
-async fn main() {
-  println!("Hello, world!");
+async fn main() -> Result<()> {
+  Ok(())
 }
